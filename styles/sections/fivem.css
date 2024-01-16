@@ -1,0 +1,150 @@
+.fivem {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 50px;
+  padding-top: 200px;
+  width: 100%;
+  position: relative;
+  z-index: 90;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+section.bg-green {
+  --w: 800px;
+  --h: 600px;
+  --o: 0.3;
+}
+
+section.bg-green::after {
+  content: "";
+  background: radial-gradient(
+    47% 65% at 50% 80%,
+    var(--color-green) 0%,
+    var(--color-background) 100%
+  );
+  width: var(--w);
+  height: var(--h);
+  position: absolute;
+  z-index: -1;
+  overflow: visible;
+
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
+  transition-timing-function: ease-out;
+
+  opacity: var(--o);
+}
+
+.fivem header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.fivem header h1.title {
+  color: var(--color-green);
+  font-family: SequelBlack;
+}
+
+.fivem header p.description {
+  color: var(--color-green);
+  max-width: 400px;
+  opacity: 0.6;
+}
+
+.scriptCard {
+  position: relative;
+
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 20px;
+  width: min-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  transition-duration: 0.4s;
+}
+
+.scriptCard:hover {
+  transform: scale(1.05);
+}
+
+.scriptCard:focus {
+  transform: scale(1.02);
+}
+
+.scriptCard .thumbnail {
+  border-radius: 10px;
+  width: 400px;
+}
+
+.scriptCard .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.scriptCard .details .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.scriptCard .details .info > * {
+  color: var(--color-black);
+}
+
+.scriptCard .details .info > h1 {
+  font-size: 20px;
+}
+
+.scriptCard .details .info > h2 {
+  font-size: 16px;
+  color: var(--color-purple);
+}
+
+.scriptCard .captureMouse {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  cursor: none;
+}
+
+.scriptCard .mouse {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2px solid var(--color-white);
+  background-color: rgba(119, 68, 235, 0.4);
+  backdrop-filter: blur(5px);
+  box-sizing: content-box;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  z-index: 100;
+}
+
+.scriptCard .mouse > * {
+  transform: rotate(-45deg);
+}

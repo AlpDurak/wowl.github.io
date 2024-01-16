@@ -1,0 +1,52 @@
+:root {
+  --color-purple: #7744eb;
+  --color-green: #03cea4;
+  --color-blue: #009eff;
+  --color-black: #090909;
+  --color-white: #f0f0f0;
+  --color-background: #060214;
+}
+
+@font-face {
+  font-family: SequelBlack;
+  src: url(../fonts/sequelblack.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  font-family: "Archivo", sans-serif;
+  color: var(--color-white);
+}
+
+body {
+  background-color: var(--color-background);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.middle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
