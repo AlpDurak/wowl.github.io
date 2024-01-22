@@ -15,28 +15,56 @@
 
 section.bg-green {
   --w: 800px;
-  --h: 600px;
+  --h: 1000px;
   --o: 0.3;
+}
+
+section.bg-green.active {
+  --w: 1200px !important;
+  --h: 1500px !important;
+  --o: 0.8 !important;
 }
 
 section.bg-green::after {
   content: "";
-  background: radial-gradient(
-    47% 65% at 50% 80%,
-    var(--color-green) 0%,
-    var(--color-background) 100%
-  );
   width: var(--w);
   height: var(--h);
   position: absolute;
+  background: radial-gradient(
+    34% 27% at 50% 57%,
+    var(--color-green) 0%,
+    transparent 100%
+  );
   z-index: -1;
-  overflow: visible;
 
   transition-duration: 0.5s;
   transition-delay: 0.3s;
   transition-timing-function: ease-out;
 
   opacity: var(--o);
+
+  animation: 10s blob infinite alternate ease-in-out;
+}
+
+@keyframes blob {
+  0% {
+  transform: rotate(0deg);
+  }
+  20% {
+  transform: rotate(30deg);
+  }
+  40% {
+  transform: rotate(10deg);
+  }
+  60% {
+  transform: rotate(20deg);
+  }
+  80% {
+  transform: rotate(-10deg);
+  }
+  100% {
+  transform: rotate(15deg);
+  }
 }
 
 .fivem header {
@@ -59,6 +87,14 @@ section.bg-green::after {
   opacity: 0.6;
 }
 
+section.fivem .sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .scriptCard {
   position: relative;
 
@@ -74,6 +110,8 @@ section.bg-green::after {
   gap: 15px;
 
   transition-duration: 0.4s;
+
+  z-index: 1 ;
 }
 
 .scriptCard:hover {
@@ -147,4 +185,42 @@ section.bg-green::after {
 
 .scriptCard .mouse > * {
   transform: rotate(-45deg);
+}
+
+.tebexStore {
+  --tebex-bg: #0A0A0C;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--tebex-bg);
+  border-radius: 20px;
+  width: 100%;
+  font-size: 18px;
+  position: relative;
+  transition-duration: 0.4s;
+
+  display: none;
+}
+
+.fivem.active .tebexStore {
+  display: flex;
+}
+
+.tebexStore > img {
+  aspect-ratio: 9/16;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.tebexStore:hover {
+  transform: scale(1.05);
+}
+.tebexStore:focus {
+  transform: scale(1.02);
 }

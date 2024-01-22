@@ -30,6 +30,8 @@
   z-index: 10;
 
   opacity: 0;
+
+  overflow: hidden;
 }
 
 .hero .captureMouse {
