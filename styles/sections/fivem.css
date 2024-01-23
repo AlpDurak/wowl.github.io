@@ -48,22 +48,22 @@ section.bg-green::after {
 
 @keyframes blob {
   0% {
-  transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   20% {
-  transform: rotate(30deg);
+    transform: rotate(30deg);
   }
   40% {
-  transform: rotate(10deg);
+    transform: rotate(10deg);
   }
   60% {
-  transform: rotate(20deg);
+    transform: rotate(20deg);
   }
   80% {
-  transform: rotate(-10deg);
+    transform: rotate(-10deg);
   }
   100% {
-  transform: rotate(15deg);
+    transform: rotate(15deg);
   }
 }
 
@@ -111,7 +111,7 @@ section.fivem .sectionBody {
 
   transition-duration: 0.4s;
 
-  z-index: 1 ;
+  z-index: 1;
 }
 
 .scriptCard:hover {
@@ -188,7 +188,7 @@ section.fivem .sectionBody {
 }
 
 .tebexStore {
-  --tebex-bg: #0A0A0C;
+  --tebex-bg: #0a0a0c;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -223,4 +223,39 @@ section.fivem .sectionBody {
 }
 .tebexStore:focus {
   transform: scale(1.02);
+}
+
+@media screen and (max-width: 530px) {
+  section.fivem header {
+    h1 {
+      font-size: 20px;
+    }
+    p {
+      width: 300px;
+    }
+  }
+  section.fivem .sectionBody .scriptCard {
+    padding: 15px;
+    width: 380px;
+  }
+
+  section.fivem .sectionBody .scriptCard img {
+    width: 100%;
+  }
+
+  section.bg-green.active {
+    --o: 0.55 !important;
+  }
+
+  .scriptCard .details .info > h1 {
+    font-size: 18px;
+  }
+
+  .scriptCard .details .info > h2 {
+    font-size: 14px;
+  }
+
+  .tebexStore {
+    font-size: 17px;
+  }
 }

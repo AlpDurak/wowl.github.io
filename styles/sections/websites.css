@@ -1,0 +1,233 @@
+section.websites {
+  margin-top: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin-bottom: 200px;
+}
+
+.websites header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.websites header h1.title {
+  color: var(--color-blue);
+  font-family: SequelBlack;
+}
+
+.websites header p.description {
+  color: var(--color-blue);
+  max-width: 400px;
+  opacity: 0.6;
+}
+
+section.websites .sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+section.websites .sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-self: center;
+}
+
+section.websites .sectionBody .websiteCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--color-white);
+  width: 440px;
+  gap: 15px;
+  transition-duration: 0.4s;
+}
+
+section.websites .sectionBody .websiteCard:hover {
+  transform: scale(1.05);
+}
+section.websites .sectionBody .websiteCard:focus {
+  transform: scale(1.02);
+}
+
+section.websites .sectionBody .websiteCard .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+section.websites .sectionBody .websiteCard img {
+  border: 2px solid #f694004f;
+  border-radius: 10px;
+}
+
+section.websites .sectionBody .websiteCard .info h1 {
+  font-size: 20px;
+  color: #f69200;
+}
+
+section.websites .sectionBody .websiteCard .info p {
+  font-size: 16px;
+  color: var(--color-background);
+}
+
+section.websites .sectionBody .websiteTools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+section.websites .sectionBody .websiteTools .tool {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-white);
+  transition-duration: 0.3s;
+}
+
+section.websites .sectionBody .websiteTools .tool:hover {
+  transform: scale(1.1);
+}
+
+section.websites .sectionBody .websiteTools .tool:nth-child(1) img {
+  width: 75%;
+}
+section.websites .sectionBody .websiteTools .tool:nth-child(2) img {
+  width: 90%;
+}
+section.websites .sectionBody .websiteTools .tool:nth-child(3) img {
+  width: 60%;
+}
+section.websites .sectionBody .websiteTools .tool:nth-child(4) img {
+  width: 70%;
+}
+
+section.websites .bg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: 0.6;
+  animation: 50s rotate infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    filter: blur(60px);
+    opacity: 0.6;
+  }
+  20% {
+    filter: blur(80px);
+    opacity: 0.8;
+  }
+  40% {
+    filter: blur(60px);
+    opacity: 0.6;
+  }
+  60% {
+    filter: blur(40px);
+    opacity: 0.4;
+  }
+  80% {
+    filter: blur(50px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+    filter: blur(60px);
+    opacity: 0.6;
+  }
+}
+
+.websiteCard .captureMouse {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  cursor: none;
+}
+
+.websiteCard .mouse {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  border: 2px solid var(--color-white);
+  background-color: rgba(0, 107, 246, 0.4);
+  backdrop-filter: blur(5px);
+  box-sizing: content-box;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+  z-index: 100;
+}
+
+.websiteCard .mouse > * {
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 530px) {
+  section.websites header {
+    h1 {
+      font-size: 20px;
+    }
+    p {
+      width: 300px;
+    }
+  }
+  section.websites .sectionBody {
+    gap: 25px;
+    .websiteCard {
+      padding: 15px;
+      width: 380px;
+    }
+  }
+
+  section.websites .sectionBody .websiteCard img {
+    width: 100%;
+  }
+
+  section.websites .sectionBody .websiteTools .tool {
+    width: 78px;
+    height: 78px;
+  }
+
+  section.websites .sectionBody .websiteCard .info {
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}

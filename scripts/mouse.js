@@ -51,10 +51,8 @@ const $fivemMouseBorder = document.querySelector(".scriptCard .captureMouse");
 $fivemMouseBorder.addEventListener("mousemove", (event) => {
   const [x, y] = [event.layerX, event.layerY];
 
-  setTimeout(() => {
-    $fivemDiv.style.top = `${y}px`;
-    $fivemDiv.style.left = `${x}px`;
-  }, 70);
+  $fivemDiv.style.top = `${y}px`;
+  $fivemDiv.style.left = `${x}px`;
 });
 
 $fivemMouseBorder.addEventListener("mouseleave", () => {
@@ -89,3 +87,49 @@ $fivemMouseBorder.addEventListener("mouseenter", () => {
   }, 25);
 });
 // FIVEM SECTION <end>
+
+// WEBSITES SECTION <start>
+const $websitesDiv = document.querySelector(".websiteCard .mouse");
+const $websitesMouseBorder = document.querySelector(
+  ".websiteCard .captureMouse"
+);
+
+$websitesMouseBorder.addEventListener("mousemove", (event) => {
+  const [x, y] = [event.layerX, event.layerY];
+
+  $websitesDiv.style.top = `${y}px`;
+  $websitesDiv.style.left = `${x}px`;
+});
+
+$websitesMouseBorder.addEventListener("mouseleave", () => {
+  const size = 0;
+  const maxSize = 60;
+
+  let s = maxSize;
+  const interval = setInterval(() => {
+    s = s - 10;
+
+    $websitesDiv.style.opacity = s / maxSize;
+    $websitesDiv.style.width = `${s}px`;
+    $websitesDiv.style.height = `${s}px`;
+
+    if (s === size) clearInterval(interval);
+  }, 25);
+});
+
+$websitesMouseBorder.addEventListener("mouseenter", () => {
+  const size = 60;
+  const minSize = 0;
+
+  let s = minSize;
+  const interval = setInterval(() => {
+    s = s + 10;
+
+    $websitesDiv.style.opacity = s / size;
+    $websitesDiv.style.width = `${s}px`;
+    $websitesDiv.style.height = `${s}px`;
+
+    if (s === size) clearInterval(interval);
+  }, 25);
+});
+// WEBSITES SECTION <end>
