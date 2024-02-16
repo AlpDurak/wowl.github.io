@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --color-purple: #7744eb;
   --color-green: #03cea4;
@@ -11,9 +14,6 @@
   font-family: SequelBlack;
   src: url(../fonts/sequelblack.ttf);
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -38,10 +38,16 @@ span {
   color: var(--color-white);
 }
 
+html {
+  width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
 body {
   background-color: var(--color-background);
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  width: 100vw !important;
+  overflow-x: hidden !important;
 }
 
 .middle {
